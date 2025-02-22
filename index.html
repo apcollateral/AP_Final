@@ -1,0 +1,127 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&P Collateral Loans - Loan Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+        label, input, select, textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            background: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        canvas {
+            border: 1px solid black;
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>A&P Collateral Loans - Loan Application Form</h2>
+    <form id="loanForm">
+        <label>Name (as per National ID):</label>
+        <input type="text" name="name" id="name" required><label>Identification Type:</label>
+    <select name="idType" required>
+        <option value="ID">National ID</option>
+        <option value="Passport">Passport</option>
+        <option value="Other">Other</option>
+    </select>
+    
+    <label>ID Number:</label>
+    <input type="text" name="idNumber" required>
+    
+    <label>Upload Identification Document:</label>
+    <input type="file" name="idDocument" id="idDocument" accept="image/*,application/pdf" required>
+    
+    <label>Date of Birth:</label>
+    <input type="date" name="dob" required>
+    
+    <label>Phone Number:</label>
+    <input type="tel" name="phone" required>
+    
+    <label><strong>Collateral Details:</strong></label>
+    <textarea name="collateral" required></textarea>
+    
+    <label><strong>Upload Clear Image of Collateral:</strong></label>
+    <input type="file" name="collateralImage" accept="image/*" required>
+    
+    <label><strong>Collateral Conditions:</strong></label>
+    <p>The collateral should not be faulty, should be in good working condition, and must be owned by the applicant. The original purchase receipt is mandatory.</p>
+    
+    <label>Upload Item Image:</label>
+    <input type="file" name="itemImage" accept="image/*" required>
+    
+    <label>Upload Receipts and Relevant Documents:</label>
+    <input type="file" name="receipts" id="receipts" accept="image/*,application/pdf" multiple required>
+    
+    <label>Loan Amount:</label>
+    <input type="number" name="loanAmount" required>
+    
+    <label>Borrowing Date:</label>
+    <input type="date" name="borrowDate" required>
+    
+    <label>Borrowing Period (in weeks):</label>
+    <input type="number" name="borrowPeriod" required>
+    
+    <label>Location (Machakos Town):</label>
+    <select name="location" required>
+        <option value="Kathemboni">Kathemboni</option>
+        <option value="Machakos University Hostels">Machakos University Hostels</option>
+        <option value="Eastleigh">Eastleigh</option>
+        <option value="Katoloni">Katoloni</option>
+        <option value="Kathayoni">Kathayoni</option>
+        <option value="Mumbuni">Mumbuni</option>
+        <option value="Katumani">Katumani</option>
+        <option value="Mwanyani">Mwanyani</option>
+        <option value="Kiima Kimwe">Kiima Kimwe</option>
+        <option value="Mua Hills">Mua Hills</option>
+        <option value="Mutituni">Mutituni</option>
+        <option value="Mumbuni North">Mumbuni North</option>
+        <option value="Muvuti/Kiima-Kimwe">Muvuti/Kiima-Kimwe</option>
+        <option value="Machakos Centre">Machakos Centre</option>
+    </select>
+    
+    <label>Live Selfie Verification:</label>
+    <video id="video" width="100%" autoplay></video>
+    <button type="button" id="captureFront">Capture Front-Facing Selfie</button>
+    <button type="button" id="captureLeft">Turn Left & Capture</button>
+    <button type="button" id="captureRight">Turn Right & Capture</button>
+    <canvas id="canvas"></canvas>
+    
+    <label>Signature of Client:</label>
+    <canvas id="signaturePad"></canvas>
+    <button type="button" id="clearSignature">Clear Signature</button>
+    
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    document.getElementById("loanForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("Your application has been submitted. We will review and contact you shortly.");
+    });
+</script>
+
+</body>
+</html>
